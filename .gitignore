@@ -1,0 +1,19 @@
+# Environment variables
+.env
+
+# Virtual environment
+venv/
+chatbot/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
