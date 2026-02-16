@@ -61,8 +61,15 @@
           var(--primary-dark) 100%
         );
         padding: 20px;
-        text-align: center;
+        text-align: left;
         border-bottom: 1px solid var(--border);
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .header-content {
+        flex: 1;
       }
 
       .header h1 {
@@ -71,9 +78,26 @@
         font-weight: 700;
       }
 
-      .header p {
-        font-size: 13px;
-        opacity: 0.9;
+      .header-icon {
+        width: 48px;
+        height: 48px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        flex-shrink: 0;
+      }
+
+      .status-indicator {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        background: #10b981;
+        border-radius: 50%;
+        margin-left: 6px;
+        vertical-align: middle;
       }
 
       .controls {
@@ -273,18 +297,32 @@
   <body>
     <div class="container">
       <div class="header">
-        <h1>ChatBot</h1>
+        <div class="header-icon">💬</div>
+        <div class="header-content">
+          <div style="display: flex; align-items: center; gap: 8px">
+            <h1 style="margin-bottom: 0">ChatBot</h1>
+            <div class="status-indicator"></div>
+          </div>
+        </div>
       </div>
 
       <div class="controls">
         <div class="control-group">
           <label>Model</label>
-          <input
-            id="modelSelect"
-            type="text"
-            value="llama-3.3-70b-versatile"
-            placeholder="e.g., llama-3.3-70b-versatile"
-          />
+          <select id="modelSelect">
+            <option value="llama-3.3-70b-versatile">
+              Llama 3.3 70B Versatile
+            </option>
+            <option value="llama-3.1-8b-instant">Llama 3.1 8B Instant</option>
+            <option value="meta-llama/llama-4-maverick-17b-128e-instruct">
+              Llama 4 Maverick 17B
+            </option>
+            <option value="meta-llama/llama-4-scout-17b-16e-instruct">
+              Llama 4 Scout 17B
+            </option>
+            <option value="openai/gpt-oss-120b">GPT OSS 120B</option>
+            <option value="qwen/qwen3-32b">Qwen 3 32B</option>
+          </select>
         </div>
         <div class="control-group">
           <label>API Key</label>
