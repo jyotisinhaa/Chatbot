@@ -23,7 +23,18 @@
       }
 
       body {
-        background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        background: linear-gradient(
+          180deg,
+          #2b2d8f 0%,
+          #3d3fb3 10%,
+          #4b59d2 18%,
+          #5c7ce6 24%,
+          #7aa6f2 30%,
+          #b792f7 34%,
+          #f0b9df 38%,
+          #ffffff 40%,
+          #ffffff 100%
+        );
         color: var(--text);
         font-family:
           -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -32,20 +43,281 @@
         align-items: center;
         justify-content: center;
         padding: 20px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .bg-waves {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        pointer-events: none;
+      }
+
+      .bg-waves::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 45%;
+        background:
+          radial-gradient(
+            circle at 12% 20%,
+            rgba(255, 255, 255, 0.9) 1px,
+            transparent 2px
+          ),
+          radial-gradient(
+            circle at 28% 35%,
+            rgba(255, 255, 255, 0.6) 1px,
+            transparent 2px
+          ),
+          radial-gradient(
+            circle at 44% 18%,
+            rgba(255, 255, 255, 0.75) 1px,
+            transparent 2px
+          ),
+          radial-gradient(
+            circle at 62% 28%,
+            rgba(255, 255, 255, 0.7) 1px,
+            transparent 2px
+          ),
+          radial-gradient(
+            circle at 78% 22%,
+            rgba(255, 255, 255, 0.85) 1px,
+            transparent 2px
+          ),
+          radial-gradient(
+            circle at 90% 38%,
+            rgba(255, 255, 255, 0.6) 1px,
+            transparent 2px
+          );
+        opacity: 0.9;
+      }
+
+      .bg-wave {
+        position: absolute;
+        left: -5vw;
+        right: -5vw;
+        height: 220px;
+        filter: blur(2px);
+        pointer-events: none;
+      }
+
+      .bg-wave::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(
+            circle at 18% 45%,
+            rgba(255, 255, 255, 0.55) 1px,
+            transparent 2px
+          ),
+          radial-gradient(
+            circle at 42% 35%,
+            rgba(255, 255, 255, 0.45) 1px,
+            transparent 2px
+          ),
+          radial-gradient(
+            circle at 68% 50%,
+            rgba(255, 255, 255, 0.5) 1px,
+            transparent 2px
+          ),
+          radial-gradient(
+            circle at 84% 30%,
+            rgba(255, 255, 255, 0.4) 1px,
+            transparent 2px
+          );
+        opacity: 0.65;
+      }
+
+      .bg-wave.wave-1 {
+        top: -160px;
+        height: 260px;
+        background: linear-gradient(
+          90deg,
+          transparent 0%,
+          rgba(124, 58, 237, 0.45) 25%,
+          rgba(124, 58, 237, 0.25) 50%,
+          rgba(124, 58, 237, 0.45) 75%,
+          transparent 100%
+        );
+        clip-path: polygon(
+          0% 30%,
+          6% 28%,
+          12% 26%,
+          18% 25%,
+          24% 25%,
+          30% 26%,
+          36% 28%,
+          42% 30%,
+          48% 31%,
+          54% 32%,
+          60% 32%,
+          66% 31%,
+          72% 30%,
+          78% 28%,
+          84% 26%,
+          90% 25%,
+          96% 25%,
+          100% 26%,
+          100% 100%,
+          0% 100%
+        );
+      }
+
+      .bg-wave.wave-2 {
+        top: -80px;
+        height: 240px;
+        background: linear-gradient(
+          90deg,
+          transparent 0%,
+          rgba(2, 132, 199, 0.38) 25%,
+          rgba(2, 132, 199, 0.2) 50%,
+          rgba(2, 132, 199, 0.38) 75%,
+          transparent 100%
+        );
+        clip-path: polygon(
+          0% 40%,
+          5% 38%,
+          10% 36%,
+          15% 35%,
+          20% 35%,
+          25% 36%,
+          30% 38%,
+          35% 40%,
+          40% 41%,
+          45% 42%,
+          50% 42%,
+          55% 41%,
+          60% 40%,
+          65% 38%,
+          70% 36%,
+          75% 35%,
+          80% 35%,
+          85% 36%,
+          90% 38%,
+          95% 40%,
+          100% 41%,
+          100% 100%,
+          0% 100%
+        );
+      }
+
+      .bg-wave.wave-3 {
+        top: -30px;
+        height: 220px;
+        background: linear-gradient(
+          90deg,
+          transparent 0%,
+          rgba(56, 189, 248, 0.4) 25%,
+          rgba(56, 189, 248, 0.22) 50%,
+          rgba(56, 189, 248, 0.4) 75%,
+          transparent 100%
+        );
+        clip-path: polygon(
+          0% 48%,
+          6% 46%,
+          12% 44%,
+          18% 43%,
+          24% 43%,
+          30% 44%,
+          36% 46%,
+          42% 48%,
+          48% 49%,
+          54% 50%,
+          60% 50%,
+          66% 49%,
+          72% 48%,
+          78% 46%,
+          84% 44%,
+          90% 43%,
+          96% 43%,
+          100% 44%,
+          100% 100%,
+          0% 100%
+        );
+      }
+
+      .bg-wave.wave-4 {
+        top: 20px;
+        height: 210px;
+        background: linear-gradient(
+          90deg,
+          transparent 0%,
+          rgba(125, 211, 252, 0.4) 25%,
+          rgba(125, 211, 252, 0.2) 50%,
+          rgba(125, 211, 252, 0.4) 75%,
+          transparent 100%
+        );
+        clip-path: polygon(
+          0% 55%,
+          7% 53%,
+          14% 51%,
+          21% 50%,
+          28% 50%,
+          35% 51%,
+          42% 53%,
+          49% 55%,
+          56% 56%,
+          63% 56%,
+          70% 56%,
+          77% 55%,
+          84% 53%,
+          91% 51%,
+          98% 50%,
+          100% 50%,
+          100% 100%,
+          0% 100%
+        );
+      }
+
+      .bg-wave.wave-5 {
+        top: 60px;
+        height: 200px;
+        background: linear-gradient(
+          90deg,
+          transparent 0%,
+          rgba(248, 162, 206, 0.35) 25%,
+          rgba(248, 162, 206, 0.18) 50%,
+          rgba(248, 162, 206, 0.35) 75%,
+          transparent 100%
+        );
+        clip-path: polygon(
+          0% 62%,
+          8% 60%,
+          16% 58%,
+          24% 57%,
+          32% 57%,
+          40% 58%,
+          48% 60%,
+          56% 62%,
+          64% 62%,
+          72% 62%,
+          80% 60%,
+          88% 58%,
+          96% 57%,
+          100% 57%,
+          100% 100%,
+          0% 100%
+        );
       }
 
       .container {
         width: 100%;
-        max-width: 900px;
+        max-width: 1000px;
         display: flex;
         flex-direction: column;
-        border-radius: 16px;
+        border-radius: 20px;
         overflow: hidden;
-        box-shadow: var(--shadow);
-        background: var(--bg-secondary);
-        height: 90vh;
-        max-height: 700px;
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+        background: rgba(255, 255, 255, 0.95);
+        height: 95vh;
+        max-height: 900px;
         transition: all 0.3s ease;
+        position: relative;
+        z-index: 2;
       }
 
       .container.expanded {
@@ -55,14 +327,10 @@
       }
 
       .header {
-        background: linear-gradient(
-          135deg,
-          var(--primary) 0%,
-          var(--primary-dark) 100%
-        );
+        background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
         padding: 20px;
         text-align: left;
-        border-bottom: 1px solid var(--border);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
         display: flex;
         align-items: center;
         gap: 12px;
@@ -104,8 +372,8 @@
         display: flex;
         gap: 12px;
         padding: 16px;
-        background: var(--bg);
-        border-bottom: 1px solid var(--border);
+        background: white;
+        border-bottom: 1px solid #e5e7eb;
         flex-wrap: wrap;
       }
 
@@ -117,21 +385,26 @@
       .control-group label {
         display: block;
         font-size: 11px;
-        color: var(--text-muted);
+        color: #6b7280;
         margin-bottom: 6px;
         font-weight: 600;
         text-transform: uppercase;
         letter-spacing: 0.5px;
       }
 
+      .control-group label .required {
+        color: #ef4444;
+        margin-left: 2px;
+      }
+
       .control-group input,
       .control-group select {
         width: 100%;
         padding: 10px 12px;
-        background: var(--bg-secondary);
-        border: 1px solid var(--border);
+        background: #f3f4f6;
+        border: 1px solid #d1d5db;
         border-radius: 8px;
-        color: var(--text);
+        color: #1f2937;
         font-size: 14px;
         transition: all 0.2s ease;
       }
@@ -139,8 +412,9 @@
       .control-group input:focus,
       .control-group select:focus {
         outline: none;
-        border-color: var(--primary);
+        border-color: #6366f1;
         box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+        background: white;
       }
 
       .chat-container {
@@ -153,10 +427,11 @@
       .chat-window {
         flex: 1;
         overflow-y: auto;
-        padding: 20px;
+        padding: 24px;
         display: flex;
         flex-direction: column;
-        gap: 12px;
+        gap: 16px;
+        background: linear-gradient(to bottom, #f8f9fa 0%, #ffffff 100%);
       }
 
       .chat-window::-webkit-scrollbar {
@@ -164,18 +439,19 @@
       }
 
       .chat-window::-webkit-scrollbar-track {
-        background: var(--bg);
+        background: #f3f4f6;
       }
 
       .chat-window::-webkit-scrollbar-thumb {
-        background: var(--border);
+        background: #d1d5db;
         border-radius: 3px;
       }
 
       .message {
         display: flex;
-        margin-bottom: 8px;
+        margin-bottom: 4px;
         animation: slideIn 0.3s ease;
+        gap: 12px;
       }
 
       @keyframes slideIn {
@@ -191,40 +467,57 @@
 
       .message.user {
         justify-content: flex-end;
+        flex-direction: row-reverse;
       }
 
-      .message.bot {
-        justify-content: flex-start;
+      .avatar {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        flex-shrink: 0;
+      }
+
+      .message.user .avatar {
+        background: #6366f1;
+      }
+
+      .message.assistant .avatar {
+        background: #a855f7;
       }
 
       .message-bubble {
-        max-width: 85%;
+        max-width: 60%;
         padding: 12px 16px;
-        border-radius: 12px;
+        border-radius: 16px;
         word-wrap: break-word;
         line-height: 1.5;
         font-size: 14px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
       }
 
       .message.user .message-bubble {
-        background: var(--primary);
+        background: #6366f1;
         color: white;
-        border-bottom-right-radius: 4px;
+        border-bottom-left-radius: 4px;
       }
 
-      .message.bot .message-bubble {
-        background: var(--bg);
-        border: 1px solid var(--border);
-        border-bottom-left-radius: 4px;
-        color: var(--text);
+      .message.assistant .message-bubble {
+        background: white;
+        border: 1px solid #e5e7eb;
+        border-bottom-right-radius: 4px;
+        color: #1f2937;
       }
 
       .composer {
         display: flex;
         gap: 10px;
-        padding: 28px 16px 28px;
-        background: var(--bg);
-        border-top: 1px solid var(--border);
+        padding: 20px 16px;
+        background: white;
+        border-top: 1px solid #e5e7eb;
         transition: all 0.3s ease;
         justify-content: center;
         margin: 0 auto 20px;
@@ -235,23 +528,24 @@
       .composer input {
         flex: 1;
         padding: 12px 14px;
-        background: var(--bg-secondary);
-        border: 1px solid var(--border);
+        background: #f3f4f6;
+        border: 1px solid #d1d5db;
         border-radius: 8px;
-        color: var(--text);
+        color: #1f2937;
         font-size: 14px;
         transition: all 0.2s ease;
       }
 
       .composer input:focus {
         outline: none;
-        border-color: var(--primary);
+        border-color: #6366f1;
         box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+        background: white;
       }
 
       .composer button {
         padding: 12px 24px;
-        background: var(--primary);
+        background: #6366f1;
         color: white;
         border: none;
         border-radius: 8px;
@@ -261,13 +555,19 @@
         font-size: 14px;
       }
 
-      .composer button:hover {
-        background: var(--primary-dark);
+      .composer button:hover:not(:disabled) {
+        background: #4f46e5;
         transform: translateY(-1px);
       }
 
-      .composer button:active {
+      .composer button:active:not(:disabled) {
         transform: translateY(0);
+      }
+
+      .composer button:disabled {
+        background: #9ca3af;
+        cursor: not-allowed;
+        opacity: 0.6;
       }
 
       @media (max-width: 600px) {
@@ -295,6 +595,13 @@
     </style>
   </head>
   <body>
+    <div class="bg-waves">
+      <div class="bg-wave wave-1"></div>
+      <div class="bg-wave wave-2"></div>
+      <div class="bg-wave wave-3"></div>
+      <div class="bg-wave wave-4"></div>
+      <div class="bg-wave wave-5"></div>
+    </div>
     <div class="container">
       <div class="header">
         <div class="header-icon">💬</div>
@@ -325,21 +632,27 @@
           </select>
         </div>
         <div class="control-group">
-          <label>API Key</label>
-          <input
-            id="apiKeyInput"
-            type="password"
-            placeholder="Optional (uses server key if blank)"
-          />
+          <label>API Key <span class="required">*</span></label>
+          <div style="display: flex; gap: 8px; align-items: center">
+            <input
+              id="apiKeyInput"
+              type="password"
+              placeholder="Required - enter your Groq API key"
+              required
+            />
+            <div
+              id="apiKeyStatus"
+              style="font-size: 12px; white-space: nowrap; color: #6366f1"
+            ></div>
+          </div>
         </div>
       </div>
 
       <div class="chat-container">
         <div id="chatWindow" class="chat-window">
-          <div class="message bot">
-            <div class="message-bubble">
-              Hi! I'm Nova, your Groq-powered assistant. How can I help?
-            </div>
+          <div class="message assistant">
+            <div class="avatar">🤖</div>
+            <div class="message-bubble">Hello! How can i assist you today?</div>
           </div>
         </div>
         <form id="chatForm" class="composer">

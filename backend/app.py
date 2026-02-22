@@ -54,9 +54,10 @@ async def static_files(file_path: str):
 
 @app.post("/chat", response_model=ChatResponse)
 def chat(request: ChatRequest) -> ChatResponse:
-    api_key = request.api_key or os.getenv("GROQ_TOKEN")
-    if not api_key:
-        raise HTTPException(status_code=400, detail="Missing Groq API key")
+    if not request.api_key or not request.api_key.strip():
+        raise HTTPException(status_code=400, detail="API key is required. Please provide a valid Groq API key.")
+
+    api_key = request.api_key.strip()
 
     print(f"DEBUG: Using API key (last 10 chars): ...{api_key[-10:]}")
     print(f"DEBUG: Model: {request.model}")
