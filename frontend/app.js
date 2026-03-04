@@ -89,10 +89,9 @@ const validateApiKey = async () => {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        model: "llama-3.3-70b-versatile",
         message: "test",
         api_key: key,
-        max_tokens: 10,
+        max_tokens: 10, // Minimal tokens for validation
       }),
     });
 
